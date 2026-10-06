@@ -1254,7 +1254,8 @@ button {
   padding-left: var(--indent);
   /* 긴 제목의 마지막 줄에 두 글자만 남던 것을 고르게 나눈다 */
   text-wrap: balance;
-  font-family: var(--article-font);
+  /* 표제 = 지백 120g(0828 확정 — 절제목과 같은 서체. 1006 글 제목에도 적용) */
+  font-family: "Jibaek", var(--article-font);
   /* 창 폭 따라 미끄러지는 clamp 금지 — 제목이 커지며 글줄이 갑자기 떨어졌었다 */
   font-size: 34px;
   font-weight: 400;
@@ -3033,6 +3034,17 @@ button.kill.shelve[aria-pressed="true"] {
   text-align: left;
   text-indent: 0;
   word-break: keep-all;
+}
+
+/* ── 표제 서체 지백 120g — 제목·절번호에 쓰는 글자만 추린 부분집합(4KB) ──
+   본 사이트는 라이선스 확인 전이라 웹폰트를 안 넣었지만, 공유 페이지는
+   다른 사람 화면에서도 제목이 지백이어야 해서 쓰는 글자만 넣었다(1006). */
+@font-face {
+  font-family: "Jibaek";
+  src: url("fonts/Jibaek-120g-subset.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* ── 공유용 단독 페이지 덧규칙 (build_share.py) ─────────────────────
